@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/capa.png" width = "300" />
+  <img src="img/capa.png" width = "250" />
 </p>
 
 <h1 align="center">CoinBot Rush
@@ -11,7 +11,7 @@
 <div align="justify"> 
 <h2>Descrição do Projeto</h2>
 
-**CoinBot Rush** é um jogo de corrida em realidade aumentada, onde robôs autônomos e teleoperados coletam moedas virtuais e desviam de obstáculos no mundo real e no virtual. O jogo foi desenvolvido como plataforma de validação do **Telecore 64**, um console portátil baseado em FPGA que combina videogames 2D e controle de robôs físicos.
+**CoinBot Rush** é um jogo de corrida em realidade aumentada, onde robôs autônomos e teleoperados coletam moedas virtuais e desviam de obstáculos no mundo real e no virtual.  Inspirado em **Mario Kart Live: Home Circuit**, o jogo foi desenvolvido como plataforma de validação do **Telecore 64**, um console portátil baseado em FPGA que combina videogames 2D e controle de robôs físicos.
 
 O projeto integra sistemas embarcados, teleoperação e robótica, permitindo que jogadores comandem robôs equipados com sensores e atuadores, tanto de forma autônoma quanto manual, por meio do console. Durante o jogo, o Telecore 64 gerencia gráficos, lógica de jogo e comunicação em tempo real com o robô físico, utilizando uma arquitetura que combina FPGA, comunicação serial (UART) e protocolos de rede (TCP/IP) com ROS 2.
 
@@ -32,6 +32,66 @@ Essa integração cria uma experiência inovadora que une o mundo dos jogos, da 
       <li>Departamento de Tecnologia (DTEC) — UEFS</li>
 </ul>
 
+<div align="justify">
+<div id="tecnologias_utilizadas">
+<h2>Tecnologias Utilizadas</h2>
+
+</div>
+</div>
+
+
+<div align="justify"> 
+<div id="design_do_jogo">
+
+<h2>Design do Jogo (Expectativa)</h2>
+
+<b>CoinBot Rush</b> é um jogo de corrida em realidade aumentada que combina desafios do mundo físico e virtual. O jogador controla um robô real, equipado com sensores, que percorre um circuito montado no ambiente físico. O objetivo é coletar moedas virtuais, exibidas na tela do console <b>Telecore 64</b>, enquanto desvia de obstáculos presentes tanto no espaço físico quanto no ambiente digital.
+
+Durante a partida, a interface do console exibe o mapa do circuito, indicando a posição do robô, das moedas e dos obstáculos virtuais. O jogador pode escolher entre dois modos de controle: <b>teleoperação</b>, assumindo manualmente o comando do robô, ou <b>modo autônomo</b>, no qual o robô navega sozinho, utilizando seus sensores e algoritmos de navegação.
+
+O desafio está em navegar com precisão, traçar rotas eficientes, evitar colisões e otimizar o tempo para coletar o maior número possível de moedas. A proposta oferece uma experiência que une a dinâmica de videogames com o controle físico de robôs, proporcionando uma interação única entre os mundos real e virtual.
+
+Inspirado em jogos clássicos de corrida, o circuito possui um trajeto pré-definido, com obstáculos estrategicamente posicionados e moedas distribuídas como itens de coleta. O mapa do jogo é maior que a área visível na tela do console; conforme o robô se desloca, a câmera acompanha seu movimento, permitindo que o jogador explore o espaço, visualize o ambiente e planeje suas rotas de forma estratégica.
+
+<p align="center">
+  <img src="img/mapa completo.png" width="500" />
+</p>
+<p align="center"><strong>Figura XX: Mapa completo do jogo</strong></p>
+
+<p align="center">
+  <img src="img/ampliada.png" width="500" />
+</p>
+<p align="center"><strong>Figura XX: Área visível no console durante o jogo</strong></p>
+
+Em caso de colisão no ambiente físico, o robô interrompe imediatamente seus movimentos, evitando danos. Simultaneamente, o jogo exibe um <i>sprite</i> de alerta na interface, indicando o bloqueio e a impossibilidade de seguir na direção impactada.
+
+<p align="center">
+  <img src="img/bloqueio.png" width="500" />
+</p>
+<p align="center"><strong>Figura XX: Sprite de alerta de colisão</strong></p>
+
+</div>
+</div>
+
+
+<div align="justify">
+<div id="arquitetura_do_sistema">
+<h2>Arquitetura do Sistema</h2>
+
+</div>
+</div>
+
+<div align="justify">
+<div id="plano_de_desenvolvimento">
+<h2>Plano de Desenvolvimento</h2>
+
+<h3>Funcionalidades Implementadas</h3>
+
+<h3>Funcionalidades Pendentes</h3>
+
+</div>
+</div>
+
 
 
 <div align="justify"> 
@@ -40,7 +100,8 @@ Essa integração cria uma experiência inovadora que une o mundo dos jogos, da 
 
 <h2>Referências</h2>
 
-> 
+> NINTENDO. Mario Kart Live: Home Circuit. Disponível em: https://www.mariowiki.com/Mario_Kart_Live:_Home_Circuit. Acesso em: 30 maio 2025.
+
 >
 
 </div>
