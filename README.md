@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/capa.png" width = "250" />
+  <img src="img/capa.png" width = "200" />
 </p>
 
 <h1 align="center">CoinBot Rush
@@ -50,6 +50,14 @@ Essa integração cria uma experiência inovadora que une o mundo dos jogos, da 
 Durante a partida, a interface do console exibe o mapa do circuito, indicando a posição do robô, das moedas e dos obstáculos virtuais. O jogador pode escolher entre dois modos de controle: <b>teleoperação</b>, assumindo manualmente o comando do robô, ou <b>modo autônomo</b>, no qual o robô navega sozinho, utilizando seus sensores e algoritmos de navegação.
 
 O desafio está em navegar com precisão, traçar rotas eficientes, evitar colisões e otimizar o tempo para coletar o maior número possível de moedas. A proposta oferece uma experiência que une a dinâmica de videogames com o controle físico de robôs, proporcionando uma interação única entre os mundos real e virtual.
+
+<h3>Sprites e Interface</h3>
+sprites do turtlebot 4 nas 12 direções, sprites de moedas, obstáculos e elementos de interface foram criados para compor a experiência visual do jogo. A interface do console exibe o mapa do circuito, a pontuação atual e o tempo restante para completar a corrida.
+
+Sprite do robô:
+
+<p align="center">
+  <img src="img/spriteTurtlebot.png" width="600" />
 
 Inspirado em jogos clássicos de corrida, o circuito possui um trajeto pré-definido, com obstáculos estrategicamente posicionados e moedas distribuídas como itens de coleta. O mapa do jogo é maior que a área visível na tela do console; conforme o robô se desloca, a câmera acompanha seu movimento, permitindo que o jogador explore o espaço, visualize o ambiente e planeje suas rotas de forma estratégica.
 
