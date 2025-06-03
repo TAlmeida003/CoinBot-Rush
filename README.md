@@ -86,6 +86,12 @@ Em caso de colisão no ambiente físico, o robô interrompe imediatamente seus m
 <div id="arquitetura_do_sistema">
 <h2>Arquitetura do Sistema</h2>
 
+<h3>Comunicação</h3>
+A comunicação entre o console <b>Telecore 64</b> e o robô é realizada por meio de uma conexão serial (UART), utilizando o protocolo TCP/IP para troca de dados. O console envia comandos de controle e recebe informações sobre o estado do robô, falando se o robô realizou uma ação ou se ocorreu uma colisão. Diagrama de comunicação:
+<p align="center">
+  <img src="img/network.png" width="500" />
+</p>
+<p align="center"><strong>Figura XX: Diagrama de comunicação entre o console e o robô</strong></p>
 </div>
 </div>
 
