@@ -86,12 +86,59 @@ Em caso de colisão no ambiente físico, o robô interrompe imediatamente seus m
 <div id="arquitetura_do_sistema">
 <h2>Arquitetura do Sistema</h2>
 
+
 <h3>Comunicação</h3>
-A comunicação entre o console <b>Telecore 64</b> e o robô é realizada por meio de uma conexão serial (UART), utilizando o protocolo TCP/IP para troca de dados. O console envia comandos de controle e recebe informações sobre o estado do robô, falando se o robô realizou uma ação ou se ocorreu uma colisão. Diagrama de comunicação:
+
+<h4>Comandos</h4>
+
 <p align="center">
-  <img src="img/network.png" width="500" />
+  <img src="img/joystick.png" width="500" />
 </p>
-<p align="center"><strong>Figura XX: Diagrama de comunicação entre o console e o robô</strong></p>
+<p align="center"><strong>Figura XX: Layout e funções do joystick para controle do robô</strong></p>
+
+`Conectar`Iniciar a conexão com o robô, estabelecendo a comunicação entre o console e o robô. O robô passa a enviar dados de sua posição e estado, enquanto o console envia comandos de controle.
+
+`Desconectar`Finalizar a conexão com o robô, interrompendo a comunicação e desativando o controle remoto.
+
+> Se passar mais de 1 minuto sem receber dados do console, o robô assume que a conexão foi perdida e para de se mover.
+
+`Reset` Reiniciar o robô, limpando seu estado atual e reiniciando a lógica de jogo. O robô retorna à sua posição inicial de maneira manual, e espera novos comandos do console.
+
+`Velocidade` Ajustar a velocidade do robô, permitindo que o jogador controle a aceleração linear. A velocidade é definida em metros por segundo (m/s) e pode ser ajustada entre 0.1 m/s a 0.3 m/s. Ao fazer isso, os tempos de resposta do robô são ajustados para garantir a escalação adequada do movimento.
+
+`Direção` A direção do robô definindo os vetores de aceleração linear e angular.
+
+`Adicionar ponto` Adicionar 10 pontos durante o mapa para execução automática posteriormente. Esses pontos são utilizados para traçar rotas e otimizar o percurso do robô.
+
+`Remover ponto` Remover o último ponto adicionado, permitindo ao jogador ajustar a rota do robô conforme necessário.
+
+`Modo autônomo/teleoperado` Alternar entre os modos de controle do robô. No modo autônomo, o robô navega sozinho nos pontos previamente definidos, enquanto no modo teleoperado, o jogador assume o controle manual.
+
+<h4>Protocolos</h4>
+
+Do cliente para o servidor, `t` é o tipo de comando a ser enviado, podendo ser, um reset (0), ou um movimento do robô (1). o campo `a` é a aceleração angular do robô, e `l` é a aceleração linear. 
+
+``` json
+{
+  "t": 1,
+  "a": 0.5,
+  "l": 0.5,
+}
+```
+
+Do servidor para o cliente, `x` e `y` são as coordenadas do robô no mapa, `a` é o angular do robô, e `cw` é o aviso de colisão, que pode ser 0 (sem colisão), 1 (perto de colisão) ou 2 (colisão).
+
+``` json
+{
+  "x": 1.0,
+  "y": 2.0,
+  "a": 0.5,
+  "cw": 1
+}
+```
+
+
+
 </div>
 </div>
 
