@@ -86,12 +86,13 @@ Essa escala é utilizada para mapear o ambiente físico no espaço virtual do jo
 
 |Elemento| Tamanho (pixels)| Tamanho (metros)|
 |--------|------------------|------------------|
-|Robô    | 40 x 40 | 0.44 x 0.44 |
-|Zona Visível  | 400 x 400 | 4.4 x 4.4 |
-| Pista Completa |1424 x 1424 | 15.7 x 15.7 |
-| Bloco | 8 x 8 | 0.088 x 0.088 |
+|Robô    | 40 x 40 | 0,44 x 0,44 |
+| Bloco | 8 x 8 | 0,088 x 0,088 |
+|Zona Visível  | 400 x 400 | 4,4 x 4,4 |
+| Pista Completa | 1392 x 1392 | 15,312 x 15,312  |
 
-Como é usado os blocos o fator de escala do jogo é de aproximadamente **1:11**, onde 1 bloco equivale a 0.088 metros, ou seja, 1 metro equivale a aproximadamente **11 blocos** ou precisamente **11.36 blocos**.
+
+Como é usado os blocos o fator de escala do jogo é de aproximadamente **1:11**, onde 1 bloco equivale a 0.088 metros, ou seja, 1 metro equivale a aproximadamente **11 blocos** ou precisamente **11,36 blocos**.
 
 <h4>Velocidade e Tempos</h4>
 
@@ -115,24 +116,36 @@ Como é usado os blocos o fator de escala do jogo é de aproximadamente **1:11**
     </tr>
     <tr>
       <td>Cenário médio</td>
-      <td>293</td>
-      <td>0,30</td>
-      <td>3,4</td>
+      <td>244</td>
+      <td>0,36</td>
+      <td>4,1</td>
     </tr>
     <tr>
+      <td>Cenário médio</td>
+      <td>339</td>
+      <td>0,26</td>
+      <td>2,9</td>
+    <tr>
       <td>Pior cenário</td>
-      <td>880</td>
-      <td>0,10</td>
-      <td>1,1</td>
+      <td>550</td>
+      <td>0,16</td>
+      <td>1,8</td>
     </tr>
   </tbody>
 </table>
 
-<p>Com base nesses tempos, é possível estimar a frequência de atualização do robô, que varia aproximadamente entre <strong>1 Hz e 5 Hz</strong>, dependendo da velocidade selecionada. Isso significa que o robô atualiza sua posição a cada <strong>200 ms a 1000 ms</strong>, o que já proporciona uma resposta satisfatória aos comandos do console.</p>
+<p>Com base nesses tempos, é possível estimar a frequência de atualização do robô, que varia aproximadamente entre <strong>1 Hz e 5 Hz</strong>, dependendo da velocidade selecionada. Isso significa que o robô atualiza sua posição a cada <strong>200 ms a 600 ms</strong>, o que já proporciona uma resposta satisfatória aos comandos do console.</p>
 
 <p>Considerando a velocidade máxima de <strong>0,46 m/s</strong>, o robô percorre cerca de <strong>0,046 metros</strong> (4,6 cm) a cada <strong>100 ms</strong>. Como isso representa aproximadamente metade de um bloco do jogo, uma taxa de amostragem de até <strong>10 Hz</strong> (atualizações a cada 100 ms) seria suficiente para garantir um controle suave e responsivo.</p>
 
 <p>Assim, a taxa de quadros por segundo (FPS) do jogo é definida como <strong>10 FPS</strong>, o que permite uma atualização visual adequada tanto do ambiente quanto da movimentação do robô.</p>
+
+| Velocidade (m/s) | Tempo por bloco (ms) | distância percorrida em 100 ms (mm)| número de comandos por bloco | Tempo perdido por comando (ms) |
+|------------------|-----------------|-------------------------------|------------------------------| ----------------------------|
+|        0,46      |      191      |   46                        |  2                           | 9  |
+|        0.36      |      244      |   36                        |  3                           | 56 |
+|        0.26      |      339      |   26                        |  4                           | 61 |
+|        0.16      |      550      |   16                        |  6                           | 5  |
 
 <p>Mesmo com frequências mais baixas (entre 1 Hz e 5 Hz), o sistema continua funcionando de forma adequada, evitando movimentos bruscos e mantendo o realismo da simulação.</p>
 
